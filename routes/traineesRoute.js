@@ -12,11 +12,11 @@ const protect = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
-router.route("/").post(protect, createTrainee).get(getAllTrainees);
+router.route("/").post(createTrainee).get(getAllTrainees);
 router
   .route("/:_id")
-  .get(protect, getSingleTrainee)
-  .put(protect, updateTrainee)
-  .delete(protect, deleteTrainee);
+  .get(getSingleTrainee)
+  .put(updateTrainee)
+  .delete(deleteTrainee);
 
 module.exports = router;
